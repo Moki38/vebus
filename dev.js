@@ -60,8 +60,8 @@ frame('F',[0x00]);
 // Request the LED status
 frame('L');
 
-// Instruct the MK2 to act as a remote panel - switch on, input current limit 12A (of 16A max.) using variant 1 (sending potvalue and scale)
-frame('S',[0x03,0xc0,0x10,0x01,0x01]);
+// Instruct the MK2 to act as a remote panel - switch on, input current limit 8A (of 16A max.) using variant 1 (sending potvalue and scale)
+frame('S',[0x03,0x80,0x10,0x01,0x01]);
 
 // Send single remote panel command - switch on, input current limit 31.5A using variant 2 (sending absolute current limit)
 frame('S',[0x03,0x3B,0x01,0x01,0x80]);

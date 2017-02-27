@@ -24,7 +24,7 @@ function vebus_display() {
 var displayinterval = setInterval(function () {
     vebus_data = vebus.update();
     vebus_display();
-  }, 500);
+  }, 1000);
 
 term.on( 'key' , function( name , matches , data ) {
     term.moveTo( 1 , 15 , "Keyboard event %s, %s.\n" , name , data ) ;
