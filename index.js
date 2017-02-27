@@ -8,8 +8,20 @@ var port =  new serialport.SerialPort(device, {
 			dataBits: 8,
 			parity: 'none',
 			stopBits: 1,
-			flowControl: false
-                        parser: serialport.parsers.raw)});
+			flowControl: false,
+                        parser: serialport.parsers.raw});
+  port.on('data', function(data) {
+    parse_vebus(data);
+  });
+
+  port.on('open', () => {
+    console.log('Port Opened');
+  });
+
+  port.on('data', (data) => {
+  /* get a buffer of data from the serial port */
+    console.log(data.toString());
+  });
 }
 
 function checksum(chkdata) {
@@ -57,20 +69,6 @@ exports.frame = function(command, data) {
 function parse_vebus(data) {
   vebus.raw = data;
 };
-
-
-port.on('data', function(data) {
-  parse_vebus(data);
-});
-
-port.on('open', () => {
-  console.log('Port Opened');
-});
-
-port.on('data', (data) => {
-  /* get a buffer of data from the serial port */
-  console.log(data.toString());
-});
 
 exports.update = function() {
   return vebus_data;
