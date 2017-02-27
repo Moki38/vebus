@@ -1,0 +1,31 @@
+{
+  "name": "vebus",
+  "version": "0.0.1",
+  "description": "VE.Bus MK2 Protocol",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Moki38/vebus.git"
+  },
+  "keywords": [
+    "Raspberry PI",
+    "Boat Automation",
+    "Node.js",
+    "Victron Energy",
+    "Phoenix",
+    "MK2",
+    "VE.Bus"
+  ],
+  "dependencies": {
+    "terminal-kit": "~0.24.0",
+    "serialport": "~4.0.0"
+  },
+  "author": {
+    "name": "Eric van Dijken <eric@team-moki.nl>"
+  },
+  "scripts": {
+    "start": "node test.js"
+  },
+  "license": "MIT"
+}
+
